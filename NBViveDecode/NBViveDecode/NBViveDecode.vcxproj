@@ -101,6 +101,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>E:\workspace\XingKong\oeip\oeip-thridparty-master\FFmpeg\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -127,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Nitesh\source\repos\NBViveDecode\NBViveDecode\include;C:\Users\Nitesh\Downloads\ffmpeg-4.0-win64-dev-final\ffmpeg-4.0-win64-dev\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\workspace\XingKong\ViveMediaDecoder_VS2017\NBViveDecode\NBViveDecode\include;E:\workspace\XingKong\XingKongURP\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,7 +168,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Nitesh\source\repos\NBViveDecode\NBViveDecode\include;C:\Users\Nitesh\Downloads\ffmpeg-4.0-win64-dev-final\ffmpeg-4.0-win64-dev\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\workspace\XingKong\ViveMediaDecoder_VS2017\NBViveDecode\NBViveDecode\include;E:\workspace\XingKong\oeip\oeip-thridparty-master\FFmpeg\lib;E:\workspace\XingKong\XingKongURP\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

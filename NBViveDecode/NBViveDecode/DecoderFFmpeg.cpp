@@ -63,22 +63,29 @@ bool DecoderFFmpeg::init(const char* filePath) {
 
 	AVDictionary* opts = NULL;
 	if (mUseTCP) {
-		av_dict_set(&opts, "rtsp_transport", "tcp", 0);
+		av_dict_set(&opts, "rtsp_transport", "tcp", 0);		
 	}
+	av_dict_set(&opts, "rtsp_transport", "udp", 0);
+	av_dict_set(&opts, "probesize", "2048", 0);
+	av_dict_set(&opts, "analyzeduration", "1000000", 0);
+	av_dict_set(&opts, "infbuf", "", 0);
+	av_dict_set(&opts, "stimeout", "1000000", 0);
 
+	av_dict_set(&opts, "preset", "ultrafast", 0);
 
 	//---- optimised by nite on 26/6
 	//av_dict_set(&opts, "probesize", "32", 1);
 	//av_dict_set(&opts, "analyzeduration", "1000", 1);
 
 	//av_dict_set(&opts, "flush_packets", "1", 0);
-	//av_dict_set(&opts, "fflags", "nobuffer", 0);
+	av_dict_set(&opts, "fflags", "nobuffer", 0);
 	//av_dict_set(&opts, "flags", "low_delay", 0);
 	//av_dict_set(&opts, "sync", "ext", 0);
 
-	//av_dict_set(&opts, "maxdelay", "1000", 0);
+	av_dict_set(&opts, "maxdelay", "500", 0);
 
-
+	//zerolatency:转码延迟，以牺牲视频质量减少延时
+	av_dict_set(&opts, "tune", "zerolatency", 0);
 
 	//av_dict_set(&opts, "hwaccel", "cuvid", 0);
 	//av_dict_set(&opts, "c:v", "h264_cuvid", 0);
